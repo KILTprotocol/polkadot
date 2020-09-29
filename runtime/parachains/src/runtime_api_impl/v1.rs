@@ -22,7 +22,7 @@ use primitives::v1::{
 	ValidatorId, ValidatorIndex, GroupRotationInfo, CoreState, ValidationData,
 	Id as ParaId, OccupiedCoreAssumption, SessionIndex, ValidationCode,
 	CommittedCandidateReceipt, ScheduledCore, OccupiedCore, CoreOccupied, CoreIndex,
-	GroupIndex, CandidateEvent, PersistedValidationData,
+	GroupIndex, CandidateEvent, PersistedValidationData, CandidateCommitments,
 };
 use sp_runtime::traits::Zero;
 use frame_support::debug;
@@ -214,6 +214,15 @@ pub fn persisted_validation_data<T: initializer::Trait>(
 		assumption,
 		|| crate::util::make_persisted_validation_data::<T>(para_id),
 	)
+}
+
+/// Implementation for the `check_candidate_commitments` function of the runtime API.
+pub fn check_candidate_commitments<T: initializer::Trait>(
+	para_id: ParaId,
+	commitments: CandidateCommitments,
+) -> bool {
+	// we strip detailed information here for the sake of API simplicity and backwards compatibility.
+	<inclusion::Module<T>>::check_candidate_commitments(para_id, commitments).is_ok()
 }
 
 /// Implementation for the `session_index_for_child` function of the runtime API.
