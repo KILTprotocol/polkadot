@@ -60,6 +60,7 @@ use transaction_payment_rpc_runtime_api::RuntimeDispatchInfo;
 use session::historical as session_historical;
 use system::{EnsureRoot, EnsureOneOf, EnsureSigned};
 use constants::{time::*, currency::*, fee::*};
+use transaction_payment::CurrencyAdapter;
 
 #[cfg(feature = "std")]
 pub use staking::StakerStatus;
@@ -209,8 +210,7 @@ parameter_types! {
 }
 
 impl transaction_payment::Trait for Runtime {
-	type Currency = Balances;
-	type OnTransactionPayment = ToAuthor<Runtime>;
+	type OnChargeTransaction = CurrencyAdapter<Balances, ToAuthor<Runtime>>; 
 	type TransactionByteFee = TransactionByteFee;
 	type WeightToFee = WeightToFee;
 	type FeeMultiplierUpdate = SlowAdjustingFeeUpdate<Self>;
