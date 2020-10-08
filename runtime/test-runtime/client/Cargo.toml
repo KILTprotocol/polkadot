@@ -16,14 +16,14 @@ polkadot-test-runtime = { path = ".." }
 polkadot-test-service = { path = "../../../node/test-service" }
 
 # Substrate dependencies
-pallet-timestamp = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sc-block-builder = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sc-client-api = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sc-consensus = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sc-light = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sc-service = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0", features = ["test-helpers"],  default-features = false }
-sp-api = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sp-blockchain = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sp-core = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-sp-runtime = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
-substrate-test-client = { git = "https://github.com/KILTprotocol/substrate", rev = "68014e8a0" }
+pallet-timestamp = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sc-block-builder = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sc-client-api = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sc-consensus = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sc-light = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sc-service = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch", features = ["test-helpers"],  default-features = false }
+sp-api = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sp-blockchain = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sp-core = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+sp-runtime = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
+substrate-test-client = { git = "https://github.com/KILTprotocol/substrate", branch = "rococo-branch" }
