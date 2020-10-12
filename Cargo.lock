@@ -4759,7 +4759,7 @@ dependencies = [
 
 [[package]]
 name = "polkadot-parachain"
-version = "0.8.22"
+version = "0.8.22-beta"
 dependencies = [
  "derive_more 0.99.9",
  "futures 0.3.5",
